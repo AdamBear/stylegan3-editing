@@ -7,8 +7,8 @@ import pyrallis
 import torch
 from tqdm import tqdm
 
-sys.path.append(".")
-sys.path.append("..")
+#sys.path.append(".")
+#sys.path.append("..")
 
 from inversion.options.train_options import TrainOptions
 from inversion.video.generate_videos import generate_reconstruction_videos
