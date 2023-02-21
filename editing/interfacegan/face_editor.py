@@ -11,12 +11,13 @@ from utils.common import tensor2im, generate_random_transform
 
 class FaceEditor:
 
-    def __init__(self, stylegan_generator: Generator, generator_type=GeneratorType.ALIGNED):
+    def __init__(self, stylegan_generator: Generator, generator_type=GeneratorType.ALIGNED, paths=None):
         self.generator = stylegan_generator
-        if generator_type == GeneratorType.ALIGNED:
-            paths = interfacegan_aligned_edit_paths
-        else:
-            paths = interfacegan_unaligned_edit_paths
+        if paths is None:
+            if generator_type == GeneratorType.ALIGNED:
+                paths = interfacegan_aligned_edit_paths
+            else:
+                paths = interfacegan_unaligned_edit_paths
 
         self.interfacegan_directions = {
             'age': torch.from_numpy(np.load(paths['age'])).cuda(),
