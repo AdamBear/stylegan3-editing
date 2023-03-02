@@ -1,8 +1,8 @@
 import os
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-from google.colab import auth
-from oauth2client.client import GoogleCredentials
+# from pydrive.auth import GoogleAuth
+# from pydrive.drive import GoogleDrive
+# from google.colab import auth
+# from oauth2client.client import GoogleCredentials
 import dlib
 import subprocess
 
@@ -24,6 +24,7 @@ STYLECLIP_PATHS = {
     "s_stats": {"id": "1FVm_Eh7qmlykpnSBN1Iy533e_A2xM78z", "name": "s_stats"},
 }
 
+code_path = ""
 
 class Downloader:
 
